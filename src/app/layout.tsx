@@ -1,4 +1,4 @@
-import '@/globals.css';
+import '@/app/globals.scss';
 import { ReactNode } from 'react';
 
 import type { Metadata, NextPage } from 'next';

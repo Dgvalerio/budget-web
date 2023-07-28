@@ -1,0 +1,6 @@
+@use 'colors';
+
+body {
+  background-color: colors.$gray-900;
+  color: colors.$gray-100;
+}
