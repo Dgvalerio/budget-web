@@ -1,0 +1,5 @@
+@use 'src/app/colors';
+
+main {
+  color: colors.$gray-100;
+}

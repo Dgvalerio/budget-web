@@ -3,6 +3,5 @@
     "next/core-web-vitals",
     "@dgvalerio/eslint-config/next",
     "plugin:storybook/recommended"
-  ],
-  "ignorePatterns": ["next-env.d.ts"]
+  ]
 }
