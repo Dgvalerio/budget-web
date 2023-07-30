@@ -1,0 +1,16 @@
+@use "src/app/colors";
+
+.footer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+  font-family: Inter, 'sans-serif';
+  text-align: center;
+  color: colors.$gray-800;
+
+  p {
+    margin: 0;
+  }
+}
