@@ -1,0 +1,44 @@
+@use 'src/app/colors';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  min-height: 100vh;
+
+  form, .head {
+    display: flex;
+    flex-direction: column;
+    width: 24rem;
+  }
+
+  .head {
+    text-align: center;
+    gap: 0.25rem;
+    margin-top: 2rem;
+
+    h2 {
+      color: colors.$gray-600;
+    }
+  }
+
+  form {
+    justify-content: stretch;
+    gap: 1rem;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .actions {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+  }
+}
