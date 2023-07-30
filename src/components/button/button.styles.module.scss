@@ -1,27 +1,24 @@
 @use 'src/app/colors';
 
 .button {
-  display: flex;
-  padding: 0.5rem 1rem;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  flex-shrink: 0;
-
   border: none;
   border-radius: 0.25rem;
-
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
   font-size: 0.875rem;
   font-weight: 600;
-  line-height: normal;
+  justify-content: center;
   letter-spacing: 1.25px;
-  text-transform: uppercase;
+  line-height: normal;
+  padding: 0.5rem 1rem;
+  text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.4s;
 
-  transition: all 0.4s;
-
-  &:hover {
+  &:hover, &:focus {
     cursor: pointer;
   }
 
@@ -29,7 +26,7 @@
     background: colors.$indigo-500;
     color: colors.$gray-100;
 
-    &:hover {
+    &:hover, &:focus {
       background: colors.$indigo-300;
     }
 
@@ -38,11 +35,15 @@
     }
   }
 
+  &.icon {
+    padding: 0.25rem;
+  }
+
   &.secondary, &.icon {
     background: colors.$gray-100;
     color: colors.$gray-900;
 
-    &:hover {
+    &:hover, &:focus {
       background: colors.$gray-800;
       color: colors.$gray-100;
     }
@@ -52,7 +53,57 @@
     }
   }
 
-  &.icon {
-    padding: 0.25rem;
-  }
+@media screen and (prefers-reduced-motion: reduce) {
+    align-items: center;
+    border: none;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    justify-content: center;
+    letter-spacing: 1.25px;
+    line-height: normal;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: none;
+
+    &:hover, &:focus {
+      cursor: pointer;
+    }
+
+    &.primary {
+      background: colors.$indigo-500;
+      color: colors.$gray-100;
+
+      &:hover, &:focus {
+        background: colors.$indigo-300;
+      }
+
+      &:active {
+        background: colors.$indigo-500;
+      }
+    }
+
+    &.icon {
+      padding: 0.25rem;
+    }
+
+    &.secondary, &.icon {
+      background: colors.$gray-100;
+      color: colors.$gray-900;
+
+      &:hover, &:focus {
+        background: colors.$gray-800;
+        color: colors.$gray-100;
+      }
+
+      &:active {
+        background: colors.$gray-100;
+      }
+    }
+}
 }

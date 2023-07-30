@@ -1,11 +1,11 @@
 @use 'src/app/colors';
 
 .main {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 2rem;
+  justify-content: center;
   min-height: 100vh;
 
   form, .head {
@@ -15,9 +15,9 @@
   }
 
   .head {
-    text-align: center;
     gap: 0.25rem;
     margin-top: 2rem;
+    text-align: center;
 
     h2 {
       color: colors.$gray-600;
@@ -25,8 +25,8 @@
   }
 
   form {
-    justify-content: stretch;
     gap: 1rem;
+    justify-content: stretch;
 
     label {
       display: flex;
@@ -35,17 +35,17 @@
     }
 
     .actions {
-      margin-top: 1rem;
       display: flex;
       flex-direction: column;
+      gap: 2rem;
       justify-content: stretch;
       margin-bottom: 2rem;
-      gap: 2rem;
+      margin-top: 1rem;
 
       > div {
+        align-items: center;
         display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 0.5rem;
 
         a {

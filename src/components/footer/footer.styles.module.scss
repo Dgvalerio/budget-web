@@ -1,14 +1,14 @@
 @use "src/app/colors";
 
 .footer {
+  color: colors.$gray-800;
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 16px;
+  font-family: Inter, sans-serif;
   gap: 8px;
-  font-family: Inter, 'sans-serif';
+  padding: 16px;
   text-align: center;
-  color: colors.$gray-800;
 
   p {
     margin: 0;

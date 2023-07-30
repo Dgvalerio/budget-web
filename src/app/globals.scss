@@ -1,12 +1,12 @@
 @use 'colors';
 
 body {
+  align-items: center;
   background-color: colors.$gray-900;
   color: colors.$gray-100;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }

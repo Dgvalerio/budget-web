@@ -1,16 +1,15 @@
 @use "src/app/colors";
 
 .text-input {
-  display: flex;
-  flex: 1;
-  padding: 8px;
   align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
-
+  background: colors.$gray-850;
   border: 1px solid transparent;
   border-radius: 4px;
-  background: colors.$gray-850;
+  display: flex;
+  flex: 1;
+  flex-shrink: 0;
+  gap: 8px;
+  padding: 8px;
 
   .icon {
     color: colors.$gray-900;
@@ -19,32 +18,50 @@
   }
 
   .input {
-    font-family: Inter, 'sans-serif' !important;
-    color: colors.$gray-100;
     background-color: transparent;
-    flex: 1;
-    outline: none;
     border: none;
+    color: colors.$gray-100;
+    flex: 1;
+    font-family: Inter, sans-serif !important;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    line-height: normal;
+    outline: none;
 
     &::placeholder {
       color: colors.$gray-600;
     }
-
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.4px;
   }
 
   &:focus-within {
+    border-color: colors.$indigo-200;
     transition: all 0.4s;
 
-    border-color: colors.$indigo-200;
-
     .icon {
-      transition: all 0.4s;
       color: colors.$gray-100;
+      transition: all 0.4s;
+
+      @media screen and (prefers-reduced-motion: reduce) {
+        color: colors.$gray-100;
+        transition: none
+      }
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      border-color: colors.$indigo-200;
+      transition: none;
+
+      .icon {
+        color: colors.$gray-100;
+        transition: all 0.4s;
+
+        @media screen and (prefers-reduced-motion: reduce) {
+          color: colors.$gray-100;
+          transition: none
+        }
+      }
     }
   }
 }
