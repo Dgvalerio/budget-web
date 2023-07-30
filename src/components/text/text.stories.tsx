@@ -10,7 +10,7 @@ const meta = {
   argTypes: {
     children: { table: { disable: true } },
     asChild: { table: { disable: true } },
-    size: { options: ['md', 'lg'], control: 'inline-radio' },
+    size: { options: ['sm', 'md'], control: 'inline-radio' },
   },
 } satisfies Meta<TextProps>;
 
@@ -18,10 +18,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Large: Story = {
+export const Small: Story = {
   args: {
-    children: 'Text Large',
-    size: 'lg',
+    children: 'Text Small',
+    size: 'sm',
   },
 };
 

@@ -4,12 +4,13 @@
   line-height: normal;
   font-weight: 400;
   letter-spacing: 0.4px;
+  margin: 0;
 
-  &.lg {
+  &.md {
     font-size: 12px;
   }
 
-  &.md {
+  &.sm {
     font-size: 10px;
   }
 }

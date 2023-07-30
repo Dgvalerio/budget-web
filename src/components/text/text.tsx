@@ -5,7 +5,7 @@ import { Slot } from '@radix-ui/react-slot';
 import styles from '@/components/text/text.styles.module.scss';
 
 export interface TextProps {
-  size?: 'md' | 'lg';
+  size?: 'sm' | 'md';
   children: ReactNode;
   asChild?: boolean;
 }
