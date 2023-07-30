@@ -1,0 +1,50 @@
+@use "src/app/colors";
+
+.text-input {
+  display: flex;
+  flex: 1;
+  padding: 8px;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: colors.$gray-850;
+
+  .icon {
+    color: colors.$gray-900;
+    height: 16px;
+    width: 16px;
+  }
+
+  .input {
+    font-family: Inter, 'sans-serif' !important;
+    color: colors.$gray-100;
+    background-color: transparent;
+    flex: 1;
+    outline: none;
+    border: none;
+
+    &::placeholder {
+      color: colors.$gray-600;
+    }
+
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.4px;
+  }
+
+  &:focus-within {
+    transition: all 0.4s;
+
+    border-color: colors.$indigo-200;
+
+    .icon {
+      transition: all 0.4s;
+      color: colors.$gray-100;
+    }
+  }
+}
