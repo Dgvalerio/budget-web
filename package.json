@@ -50,5 +50,6 @@
     "stylelint-order": "^6.0.3",
     "stylelint-scss": "^5.0.1",
     "stylelint-use-nesting": "^4.1.0"
-  }
+  },
+  "packageManager": "yarn@3.6.1"
 }
