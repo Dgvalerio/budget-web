@@ -18,5 +18,8 @@
       "declarations"
     ],
     "order/properties-alphabetical-order": true
-  }
+  },
+  "ignoreFiles": [
+    "src/app/normalize.scss"
+  ]
 }
