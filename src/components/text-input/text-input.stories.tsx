@@ -20,7 +20,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Input: Story = {
   args: {
-    children: <TextInput.Input placeholder="Digite seu e-mail" />,
+    children: <TextInput.Input name="some" placeholder="Digite seu e-mail" />,
   },
 };
 
@@ -31,7 +31,7 @@ export const InputWithIcon: Story = {
         <TextInput.Icon>
           <Mail />
         </TextInput.Icon>
-        <TextInput.Input placeholder="Digite seu e-mail" />
+        <TextInput.Input name="some" placeholder="Digite seu e-mail" />
       </>
     ),
   },
