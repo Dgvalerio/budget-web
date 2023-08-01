@@ -1,4 +1,26 @@
+@use "sass:color";
 @use 'colors';
+
+* {
+  &::selection {
+    background-color: colors.$gray-100;
+    color: colors.$gray-900;
+  }
+
+  &::-webkit-scrollbar {
+    height: 4px;
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: color.adjust(colors.$gray-900, $lightness: 8%);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: color.adjust(colors.$gray-900, $lightness: 32%);
+    border-radius: 0.6rem;
+  }
+}
 
 body {
   align-items: center;
