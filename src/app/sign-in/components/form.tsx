@@ -66,9 +66,7 @@ export const SignInForm: FC = () => {
           </TextInput.Root>
         </label>
         <div className="mb-8 mt-4 flex flex-col justify-stretch gap-8">
-          <Button className="w-full" type="submit">
-            Entrar
-          </Button>
+          <Button type="submit">Entrar</Button>
           <div className="flex flex-col items-center gap-2">
             <Text className="text-gray-600 underline" asChild>
               <Link href="">Esqueci minha senha</Link>
