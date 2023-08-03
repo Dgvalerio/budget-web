@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
 
-import styles from '@/components/heading/heading.styles.module.scss';
+import clsx from 'clsx';
 
 export interface HeadingProps {
   size?: 'md' | 'lg';
@@ -18,7 +18,12 @@ export const Heading: FC<HeadingProps> = ({
   const Component = asChild ? Slot : 'h2';
 
   return (
-    <Component className={`${styles.heading} ${styles[size]}`}>
+    <Component
+      className={clsx({
+        'text-md font-medium tracking-[1.25px]': size === 'md',
+        'text-lg font-normal tracking-[0.25px]': size === 'lg',
+      })}
+    >
       {children}
     </Component>
   );

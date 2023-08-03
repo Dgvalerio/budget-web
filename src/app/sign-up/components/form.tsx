@@ -8,7 +8,6 @@ import Link from 'next/link';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { signUpSchema } from '@/app/sign-up/schema';
-import styles from '@/app/sign-up/sign-up.styles.module.scss';
 import { Button } from '@/components/button/button';
 import { TextInput } from '@/components/text-input/text-input';
 import { Text } from '@/components/text/text';
@@ -25,15 +24,17 @@ export const SignUpForm: FC = () => {
     formState: { errors },
   } = form;
 
-  // const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
   const handleSubmit: SubmitHandler<SignUp> = (data) => {
     console.log({ data });
   };
 
   return (
     <FormProvider {...form}>
-      <form onSubmit={form.handleSubmit(handleSubmit)}>
-        <label htmlFor="name">
+      <form
+        className="flex w-96 flex-col justify-stretch gap-4"
+        onSubmit={form.handleSubmit(handleSubmit)}
+      >
+        <label className="flex flex-col gap-1" htmlFor="name">
           <Text>Nome</Text>
           <TextInput.Root error={!!errors['name']}>
             <TextInput.Icon>
@@ -48,7 +49,7 @@ export const SignUpForm: FC = () => {
           </TextInput.Root>
           <TextInput.Error error={errors['name']} />
         </label>
-        <label htmlFor="email">
+        <label className="flex flex-col gap-1" htmlFor="email">
           <Text>E-mail</Text>
           <TextInput.Root error={!!errors['email']}>
             <TextInput.Icon>
@@ -63,7 +64,7 @@ export const SignUpForm: FC = () => {
           </TextInput.Root>
           <TextInput.Error error={errors['email']} />
         </label>
-        <label htmlFor="password">
+        <label className="flex flex-col gap-1" htmlFor="password">
           <Text>Senha</Text>
           <TextInput.Root error={!!errors['password']}>
             <TextInput.Icon>
@@ -78,7 +79,7 @@ export const SignUpForm: FC = () => {
           </TextInput.Root>
           <TextInput.Error error={errors['password']} />
         </label>
-        <label htmlFor="passwordConfirmation">
+        <label className="flex flex-col gap-1" htmlFor="passwordConfirmation">
           <Text>Confirmação de senha</Text>
           <TextInput.Root error={!!errors['passwordConfirmation']}>
             <TextInput.Icon>
@@ -93,7 +94,7 @@ export const SignUpForm: FC = () => {
           </TextInput.Root>
           <TextInput.Error error={errors['passwordConfirmation']} />
         </label>
-        <div className={styles.actions}>
+        <div className="mb-8 mt-4 flex justify-between">
           <Button variant="secondary" asChild type="button">
             <Link href="/sign-in">Voltar</Link>
           </Button>
