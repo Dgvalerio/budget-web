@@ -42,7 +42,7 @@ export const SignInForm: FC = () => {
 
       const response = await api.post<AuthTypes.Dto>('/auth/sign-in', data);
 
-      Cookies.set('token', response.data.token);
+      Cookies.set('token', response.data.token, { expires: 1 });
 
       router.push(routes.home);
     } catch (e) {
