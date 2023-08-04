@@ -1,10 +1,11 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -12,23 +13,49 @@ import { signInSchema } from '@/app/sign-in/schema';
 import githubSvg from '@/assets/github.svg';
 import googleSvg from '@/assets/google.svg';
 import { Button } from '@/components/button/button';
+import { Loading } from '@/components/loading/loading';
 import { TextInput } from '@/components/text-input/text-input';
 import { Text } from '@/components/text/text';
+import { api } from '@/config/api';
+import { routes } from '@/middleware';
+import { AuthTypes } from '@/types/auth';
 
+import { AxiosError } from 'axios';
+import Cookies from 'js-cookie';
 import { Lock, Mail } from 'lucide-react';
 import { z } from 'zod';
 
 type SignIn = z.infer<typeof signInSchema>;
 
 export const SignInForm: FC = () => {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const form = useForm<SignIn>({ resolver: zodResolver(signInSchema) });
 
   const {
     formState: { errors },
   } = form;
 
-  const handleSubmit: SubmitHandler<SignIn> = (data) => {
-    console.log({ data });
+  const handleSubmit: SubmitHandler<SignIn> = async (data) => {
+    try {
+      setLoading(true);
+
+      const response = await api.post<AuthTypes.Dto>('/auth/sign-in', data);
+
+      Cookies.set('token', response.data.token);
+
+      router.push(routes.home);
+    } catch (e) {
+      if ((e as AxiosError).response?.data) {
+        const data = (e as AxiosError).response?.data as { message: string };
+
+        form.setError('email', { message: data.message });
+      } else {
+        console.warn({ e });
+      }
+
+      setLoading(false);
+    }
   };
 
   return (
@@ -96,6 +123,7 @@ export const SignInForm: FC = () => {
           </div>
         </div>
       </form>
+      {loading && <Loading />}
     </FormProvider>
   );
 };
