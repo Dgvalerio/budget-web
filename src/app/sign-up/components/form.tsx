@@ -1,31 +1,55 @@
 'use client';
 
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import { signUpSchema } from '@/app/sign-up/schema';
 import { Button } from '@/components/button/button';
+import { Loading } from '@/components/loading/loading';
 import { TextInput } from '@/components/text-input/text-input';
 import { Text } from '@/components/text/text';
+import { api } from '@/config/api';
+import { routes } from '@/middleware';
+import { UserTypes } from '@/types/user';
 
+import { AxiosError } from 'axios';
 import { Lock, Mail, User } from 'lucide-react';
 import { z } from 'zod';
 
 type SignUp = z.infer<typeof signUpSchema>;
 
 export const SignUpForm: FC = () => {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const form = useForm<SignUp>({ resolver: zodResolver(signUpSchema) });
 
   const {
     formState: { errors },
   } = form;
 
-  const handleSubmit: SubmitHandler<SignUp> = (data) => {
-    console.log({ data });
+  const handleSubmit: SubmitHandler<SignUp> = async (data) => {
+    try {
+      setLoading(true);
+
+      await api.post<UserTypes.Dto>('/user', data);
+
+      router.push(routes.signIn);
+    } catch (e) {
+      if ((e as AxiosError).response?.data) {
+        const data = (e as AxiosError).response?.data as { message: string };
+
+        form.setError('email', { message: data.message });
+      } else {
+        console.warn({ e });
+      }
+
+      setLoading(false);
+    }
   };
 
   return (
@@ -95,12 +119,13 @@ export const SignUpForm: FC = () => {
           <TextInput.Error error={errors['passwordConfirmation']} />
         </label>
         <div className="mb-8 mt-4 flex justify-between">
-          <Button variant="secondary" asChild type="button">
+          <Button variant="secondary" asChild type="button" disabled={loading}>
             <Link href="/sign-in">Voltar</Link>
           </Button>
           <Button type="submit">Cadastrar</Button>
         </div>
       </form>
+      {loading && <Loading />}
     </FormProvider>
   );
 };
