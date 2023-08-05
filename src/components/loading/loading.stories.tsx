@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Loading, LoadingProps } from '@/components/loading/loading';
 
 const meta = {
-  title: 'Input/Loading',
+  title: 'Part/Loading',
   component: Loading,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],
