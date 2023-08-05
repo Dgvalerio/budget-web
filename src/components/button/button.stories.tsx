@@ -38,6 +38,13 @@ export const Secondary: Story = {
   },
 };
 
+export const Ghost: Story = {
+  args: {
+    children: 'Button Ghost',
+    variant: 'ghost',
+  },
+};
+
 export const Icon: Story = {
   args: {
     children: (
