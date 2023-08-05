@@ -21,6 +21,7 @@ export const Button: FC<ButtonProps> = ({
 
   return (
     <Component
+      {...(!asChild && !props.type && { type: 'button' })}
       {...props}
       className={clsx(
         'flex items-center justify-center gap-2 rounded text-sm font-medium uppercase tracking-[1.25px] transition-colors focus:outline-indigo-200',
