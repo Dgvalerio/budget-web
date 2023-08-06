@@ -25,13 +25,13 @@ export const UserDropdown: FC = () => {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center justify-end px-1">
       <div className="h-8 w-8 rounded-[50%] bg-gray-600"></div>
-      <div className="cursor-pointer" onClick={toggle}>
+      <div role="button" className="cursor-pointer" onClick={toggle}>
         <ChevronDown className="h-6 w-6" />
       </div>
       {active && (
-        <div className="absolute right-0 top-12 mr-1 mt-1 flex flex-col rounded border-[1px] border-gray-850 bg-gray-900 py-1">
+        <div className="absolute mt-24 flex flex-col rounded border-[1px] border-gray-850 bg-gray-900 py-1">
           <Button variant="ghost" onClick={logout}>
             Sair <LogOut className="h-3 w-3" />
           </Button>

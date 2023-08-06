@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { Heading } from '@/components/heading/heading';
 import { Text } from '@/components/text/text';
-import { UserDropdown } from '@/components/top-bar/components/user-dropdown/user-dropdown';
+import { UserDropdown } from '@/components/user-dropdown/user-dropdown';
 
 import { PiggyBank } from 'lucide-react';
 
