@@ -1924,6 +1924,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@faker-js/faker@npm:^8.0.2":
+  version: 8.0.2
+  resolution: "@faker-js/faker@npm:8.0.2"
+  checksum: cf73daf9a50397eb0b3f04a7ef3fbb6f54acc026b167707136a7e58a517fd805a46c9e8c5f017f3022f104a4ff984765daaeee2cb98b3c34646db05c2acad441
+  languageName: node
+  linkType: hard
+
 "@fal-works/esbuild-plugin-global-externals@npm:^2.1.2":
   version: 2.1.2
   resolution: "@fal-works/esbuild-plugin-global-externals@npm:2.1.2"
@@ -6362,6 +6369,7 @@ __metadata:
   resolution: "budget-web@workspace:."
   dependencies:
     "@dgvalerio/eslint-config": ^1.5.0
+    "@faker-js/faker": ^8.0.2
     "@hookform/resolvers": ^3.1.1
     "@radix-ui/react-slot": ^1.0.2
     "@storybook/addon-a11y": ^7.1.1
@@ -6389,6 +6397,7 @@ __metadata:
     cypress: ^12.17.3
     eslint: ^8.45.0
     eslint-config-next: 13.4.12
+    eslint-plugin-cypress: ^2.13.4
     eslint-plugin-storybook: ^0.6.13
     js-cookie: ^3.0.5
     lucide-react: ^0.263.1
@@ -8209,6 +8218,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-cypress@npm:^2.13.4":
+  version: 2.13.4
+  resolution: "eslint-plugin-cypress@npm:2.13.4"
+  dependencies:
+    globals: ^13.20.0
+  peerDependencies:
+    eslint: ">= 3.2.1"
+  checksum: 231202f0bc8ae7c77c9de2888d1773a753c6b95799d89ced1b6fe273591dd9718687320341b294f5f6e22de73c1e83487bb7456ee74a77313c1c5a68ed2da205
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-import-helpers@npm:^1.3.1":
   version: 1.3.1
   resolution: "eslint-plugin-import-helpers@npm:1.3.1"
@@ -9454,7 +9474,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globals@npm:^13.19.0":
+"globals@npm:^13.19.0, globals@npm:^13.20.0":
   version: 13.20.0
   resolution: "globals@npm:13.20.0"
   dependencies:

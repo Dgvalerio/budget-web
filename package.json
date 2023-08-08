@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@dgvalerio/eslint-config": "^1.5.0",
+    "@faker-js/faker": "^8.0.2",
     "@storybook/addon-a11y": "^7.1.1",
     "@storybook/addon-designs": "^7.0.1",
     "@storybook/addon-essentials": "^7.1.1",
@@ -54,6 +55,7 @@
     "@storybook/theming": "^7.1.1",
     "@types/js-cookie": "^3.0.3",
     "cypress": "^12.17.3",
+    "eslint-plugin-cypress": "^2.13.4",
     "eslint-plugin-storybook": "^0.6.13",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "storybook": "^7.1.1"

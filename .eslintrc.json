@@ -1,8 +1,9 @@
 {
+  "plugins": ["cypress"],
   "extends": [
     "next/core-web-vitals",
     "@dgvalerio/eslint-config/next",
     "plugin:storybook/recommended",
-    ""
+    "plugin:cypress/recommended"
   ]
 }
