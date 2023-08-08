@@ -5,7 +5,7 @@ import React, { FC, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { Button } from '@/components/button/button';
-import { routes } from '@/middleware';
+import { routes } from '@/lib/routes';
 
 import Cookies from 'js-cookie';
 import { ChevronDown, LogOut } from 'lucide-react';

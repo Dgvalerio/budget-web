@@ -17,7 +17,7 @@ import { Loading } from '@/components/loading/loading';
 import { TextInput } from '@/components/text-input/text-input';
 import { Text } from '@/components/text/text';
 import { api } from '@/config/api';
-import { routes } from '@/middleware';
+import { routes } from '@/lib/routes';
 import { AuthTypes } from '@/types/auth';
 
 import { AxiosError } from 'axios';

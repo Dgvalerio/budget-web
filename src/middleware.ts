@@ -1,12 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// const signInURL = `https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID}`;
+import { routes } from '@/lib/routes';
 
-export const routes = {
-  home: '/',
-  signIn: '/sign-in',
-  signUp: '/sign-up',
-};
+// const signInURL = `https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_GITHUB_CLIENT_ID}`;
 
 export const middleware = (request: NextRequest): NextResponse => {
   const token = request.cookies.get('token')?.value;
