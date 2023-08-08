@@ -4,15 +4,10 @@
 import { faker } from '@faker-js/faker/locale/pt_BR';
 
 import { AuthTypes } from '@/types/auth';
-import { UserTypes } from '@/types/user';
 
-export const userFake = (): UserTypes.Dto => ({
-  id: faker.string.alphanumeric(),
-  githubId: faker.number.int(),
-  name: faker.person.fullName(),
-  email: faker.internet.email(),
-  avatarUrl: faker.internet.avatar(),
-});
+// todo: make absolute imports work
+// eslint-disable-next-line no-restricted-imports
+import { userFake } from '../../../src/utils/tests/user.fake';
 
 export const authFake = (): AuthTypes.Dto => ({
   user: userFake(),
@@ -35,8 +30,6 @@ describe('Sign In', () => {
 
     cy.get('button[type="submit"]').click();
 
-    // cy.get('[data-test-id="password-error"]').should(($item) => {
-    //   expect($item.first()).to.contain('Esse usuário não existe!');
-    // });
+    cy.url().should('eq', 'http://localhost:3000/');
   });
 });
