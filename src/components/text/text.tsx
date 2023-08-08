@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
 
-import { tv, VariantProps } from 'tailwind-variants';
+import { tv, type VariantProps } from 'tailwind-variants';
 
 const textVariants = tv({
   base: 'font-normal tracking-[0.4px]',
@@ -14,7 +14,8 @@ const textVariants = tv({
   },
 });
 
-export interface TextProps extends VariantProps<typeof textVariants> {
+export interface TextProps
+  extends Omit<VariantProps<typeof textVariants>, 'class'> {
   children: ReactNode;
   asChild?: boolean;
   className?: string;

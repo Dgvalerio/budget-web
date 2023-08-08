@@ -13,7 +13,8 @@ const headingVariants = tv({
   },
 });
 
-export interface HeadingProps extends VariantProps<typeof headingVariants> {
+export interface HeadingProps
+  extends Omit<VariantProps<typeof headingVariants>, 'class'> {
   children: ReactNode;
   asChild?: boolean;
   className?: string;

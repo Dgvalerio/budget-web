@@ -16,7 +16,8 @@ const textInputRootVariants = tv({
 });
 
 export namespace TextInputProps {
-  export interface Root extends VariantProps<typeof textInputRootVariants> {
+  export interface Root
+    extends Omit<VariantProps<typeof textInputRootVariants>, 'class'> {
     children: ReactNode;
   }
 

@@ -24,7 +24,7 @@ const buttonVariants = tv({
 
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+    Omit<VariantProps<typeof buttonVariants>, 'class'> {
   children: ReactNode;
   asChild?: boolean;
 }
