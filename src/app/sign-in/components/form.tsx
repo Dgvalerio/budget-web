@@ -77,6 +77,7 @@ export const SignInForm: FC = () => {
               required
             />
           </TextInput.Root>
+          <TextInput.Error error={errors['email']} />
         </label>
         <label className="flex flex-col gap-1" htmlFor="password">
           <Text>Senha</Text>
@@ -91,6 +92,7 @@ export const SignInForm: FC = () => {
               required
             />
           </TextInput.Root>
+          <TextInput.Error error={errors['password']} />
         </label>
         <div className="mb-8 mt-4 flex flex-col justify-stretch gap-8">
           <Button type="submit">Entrar</Button>

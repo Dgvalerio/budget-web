@@ -60,8 +60,14 @@ export const TextInputInput: FC<TextInputProps.Input> = ({
   );
 };
 
-const TextInputError: FC<TextInputProps.Error> = ({ error }) =>
-  error ? <Text size="sm">{error.message}</Text> : <></>;
+const TextInputError: FC<TextInputProps.Error> = ({ error, ...props }) =>
+  error ? (
+    <Text size="sm" {...props}>
+      {error.message}
+    </Text>
+  ) : (
+    <></>
+  );
 
 export const TextInput = {
   Root: TextInputRoot,
