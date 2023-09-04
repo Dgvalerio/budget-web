@@ -2,10 +2,9 @@ import React, { FC, ReactNode } from 'react';
 
 import { Slot } from '@radix-ui/react-slot';
 
-import { tv, type VariantProps } from 'tailwind-variants';
+import { cva, type VariantProps } from 'class-variance-authority';
 
-const textVariants = tv({
-  base: 'font-normal tracking-[0.4px]',
+const textVariants = cva('font-normal tracking-[0.4px]', {
   variants: {
     size: {
       sm: 'text-xs',

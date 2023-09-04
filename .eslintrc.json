@@ -5,5 +5,9 @@
     "@dgvalerio/eslint-config/next",
     "plugin:storybook/recommended",
     "plugin:cypress/recommended"
-  ]
+  ],
+  "rules": {
+    "valid-jsdoc": "off",
+    "jsdoc/require-jsdoc": "off"
+  }
 }

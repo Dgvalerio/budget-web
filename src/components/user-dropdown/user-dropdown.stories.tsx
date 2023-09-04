@@ -40,6 +40,6 @@ export const Opened: Story = {
 
     await userEvent.click(canvas.getByRole('button'));
 
-    expect(canvas.getByText('Sair')).toBeInTheDocument();
+    await expect(canvas.getByText('Sair')).toBeInTheDocument();
   },
 };

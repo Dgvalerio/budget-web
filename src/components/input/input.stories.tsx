@@ -4,7 +4,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TextInput, TextInputProps } from '@/components/text-input/text-input';
+import { Input, InputProps } from '@/components/input/input';
 
 import { Mail } from 'lucide-react';
 import { z } from 'zod';
@@ -26,8 +26,8 @@ const Wrapper: FC<PropsWithChildren> = ({ children }) => {
 };
 
 const meta = {
-  title: 'Input/TextInput',
-  component: TextInput.Root,
+  title: 'Input/Input',
+  component: Input.Root,
   parameters: { layout: 'centered' },
   tags: ['autodocs'],
   argTypes: {
@@ -41,15 +41,15 @@ const meta = {
       </Wrapper>
     ),
   ],
-} satisfies Meta<TextInputProps.Root>;
+} satisfies Meta<InputProps.Root>;
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Input: Story = {
+export const TextInput: Story = {
   args: {
-    children: <TextInput.Input name="email" placeholder="Digite seu e-mail" />,
+    children: <Input.Text name="email" placeholder="Digite seu e-mail" />,
   },
 };
 
@@ -57,10 +57,10 @@ export const InputWithIcon: Story = {
   args: {
     children: (
       <>
-        <TextInput.Icon>
+        <Input.Icon>
           <Mail />
-        </TextInput.Icon>
-        <TextInput.Input name="email" placeholder="Digite seu e-mail" />
+        </Input.Icon>
+        <Input.Text name="email" placeholder="Digite seu e-mail" />
       </>
     ),
   },
@@ -71,10 +71,10 @@ export const InputWithError: Story = {
     error: true,
     children: (
       <>
-        <TextInput.Icon>
+        <Input.Icon>
           <Mail />
-        </TextInput.Icon>
-        <TextInput.Input name="email" placeholder="Digite seu e-mail" />
+        </Input.Icon>
+        <Input.Text name="email" placeholder="Digite seu e-mail" />
       </>
     ),
   },
